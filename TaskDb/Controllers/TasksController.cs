@@ -53,6 +53,7 @@ public class TasksController : ControllerBase {
       Priority = dto.Priority,
       IsCompleted = false,
       CreatedAt = DateTime.UtcNow,
+      DueDate = dto.DueDate
     };
     _db.Tasks.Add(task);
 
@@ -71,6 +72,7 @@ public class TasksController : ControllerBase {
     task.Description = dto.Description?.Trim() ?? string.Empty;
     task.IsCompleted = dto.IsCompleted;
     task.Priority = dto.Priority;
+    task.DueDate = dto.DueDate;
     await _db.SaveChangesAsync();
     return Ok(task);
 
@@ -141,25 +143,39 @@ public class TasksController : ControllerBase {
   public async Task<ActionResult> GetPaged(
       [FromQuery] int page = 1,
       [FromQuery] int pageSize = 5) {
-      if (page < 1) page = 1;
-      if (pageSize < 1) pageSize = 5;
-      if (pageSize > 50) pageSize = 50;
-      var totalCount = await _db.Tasks.CountAsync();
-      var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
-      var tasks = await _db.Tasks
-          .OrderByDescending(t => t.CreatedAt)
-          .Skip((page - 1) * pageSize)
-          .Take(pageSize)
-          .ToListAsync();
-      return Ok(new {
-          Page = page,
-          PageSize = pageSize,
-          TotalCount = totalCount,
-          TotalPages = totalPages,
-          HasPrev = page > 1,
-          HasNext = page < totalPages,
-          Items = tasks
-      });
+    if (page < 1) page = 1;
+    if (pageSize < 1) pageSize = 5;
+    if (pageSize > 50) pageSize = 50;
+    var totalCount = await _db.Tasks.CountAsync();
+    var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
+    var tasks = await _db.Tasks
+        .OrderByDescending(t => t.CreatedAt)
+        .Skip((page - 1) * pageSize)
+        .Take(pageSize)
+        .ToListAsync();
+    return Ok(new {
+      Page = page,
+      PageSize = pageSize,
+      TotalCount = totalCount,
+      TotalPages = totalPages,
+      HasPrev = page > 1,
+      HasNext = page < totalPages,
+      Items = tasks
+    });
   }
+  
+[HttpGet("overdue")]
+  public async Task<ActionResult<IEnumerable<TaskItem>>> GetOverdue() {
+      var now = DateTime.UtcNow;
+      var overdue = await _db.Tasks
+          .Where(t => t.DueDate != null
+                  && t.DueDate < now
+                  && !t.IsCompleted)
+          .OrderBy(t => t.DueDate)
+          .ToListAsync();
+      
+      return Ok(overdue);
+  }
+
 }
 
