@@ -23,9 +23,6 @@
   <a href="https://www.sqlite.org/">
     <img src="https://img.shields.io/badge/SQLite-003B57.svg?style=for-the-badge&logo=sqlite&logoColor=white"/>
   </a>
-  <a href="https://learn.microsoft.com/ef/">
-    <img src="https://img.shields.io/badge/EF%20Core-512BD4.svg?style=for-the-badge&logo=dotnet&logoColor=white"/>
-  </a>
   <a href="https://learn.microsoft.com/dotnet/csharp/">
     <img src="https://img.shields.io/badge/C%23-239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white"/>
   </a>
