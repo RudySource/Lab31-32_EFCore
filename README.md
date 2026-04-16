@@ -1,5 +1,3 @@
-# Лабораторная работа №31-32. Введение в SQLite и Entity Framework Core
-
 <div align="center">
 
   <h3>RUD3US</h3>
@@ -15,6 +13,26 @@
 
 </div>
 
+<p align="center">
+  <a href="https://github.com/RudySource?tab=repositories">
+    <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+  <a href="https://dotnet.microsoft.com/">
+    <img src="https://img.shields.io/badge/.NET-5C2D91.svg?style=for-the-badge&logo=.net&logoColor=white"/>
+  </a>
+  <a href="https://www.sqlite.org/">
+    <img src="https://img.shields.io/badge/SQLite-003B57.svg?style=for-the-badge&logo=sqlite&logoColor=white"/>
+  </a>
+  <a href="https://learn.microsoft.com/ef/">
+    <img src="https://img.shields.io/badge/EF%20Core-512BD4.svg?style=for-the-badge&logo=dotnet&logoColor=white"/>
+  </a>
+  <a href="https://learn.microsoft.com/dotnet/csharp/">
+    <img src="https://img.shields.io/badge/C%23-239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white"/>
+  </a>
+</p>
+
+<div align="center" style="max-width: 600px; margin: 0 auto; padding: 18px; border-radius: 18px; background: rgba(255,255,255,0.06); box-shadow: 0 14px 30px rgba(0,0,0,0.08);">
+
 ## Основная информация
 
 **ФИО**: Rudy Rudy Rudy
@@ -23,9 +41,11 @@
 
 **Дата**: 24.08.2077
 
-[![Github](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RudySource?tab=repositories)
+</div>
 
 ---
+
+# Лабораторная работа №31-32. Введение в SQLite и Entity Framework Core
 
 ## Краткое описание работы
 
