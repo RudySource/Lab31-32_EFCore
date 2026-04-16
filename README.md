@@ -6,7 +6,7 @@
     src="https://avatars.githubusercontent.com/u/80245370?v=4"
     alt="Rudy Icon"
     width="180"
-    style="border-radius: 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); border: 1px solid #e5e7eb;"
+    style="border-radius: 50%; box-shadow: 0 8px 24px rgba(0,0,0,0.18); border: 1px solid #e5e7eb;"
   />
 
   <p><sub>Made By Rudy</sub></p>
